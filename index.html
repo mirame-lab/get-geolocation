@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting to Google Form</title>
+    <script>
+        function redirectToForm() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+                var formURL = "https://docs.google.com/forms/d/e/1E7mQiOFDyPz-WMIwEtcpZsBiV9NYeQfzCkIGdqJnHXI/viewform?entry.1831639954=" + lat + "," + lon;
+                window.location.href = formURL;
+            });
+        }
+    </script>
+</head>
+<body onload="redirectToForm()">
+    <p>Redirecting to the form with your location...</p>
+</body>
+</html>
